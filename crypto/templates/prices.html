@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+
+
+
+<div class="container">
+{% if crypto.Response %}
+	{{quote}} does not exist!!
+{% endif %}
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Daily High</th>
+      <th scope="col">Daily Low</th>
+      <th scope="col">MarketCap</th>
+    </tr>
+  </thead>
+  	{% for key,value in crypto.DISPLAY.items %}
+    <tr>
+      <td>{{key}}</td>
+      <td>{{ value.USD.PRICE}}</td>
+      <td>{{value.USD.HIGHDAY}}</td>
+      <td>{{value.USD.LOWDAY}}</td>
+      <td>{{value.USD.MKTCAP}}</td>
+    </tr>
+  {% endfor %}
+</table>
+</div>
+
+{% endblock %}
