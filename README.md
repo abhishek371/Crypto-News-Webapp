@@ -1,1 +1,2 @@
-"# Crypto-News-Webapp" 
+"# Crypto Currency News Site With Django & Python" 
+
